@@ -46,13 +46,15 @@ class ItemsControllers {
         const trx = await knex.transaction()
 
         const item = await trx('items').where('id', id).first()
-        const category = await trx('items_category').where({item_id: id}).select("category_id")
+        const categories = await trx('items_category').where({item_id: id}).select("category_id")
         if (!item){
             return response.status(400).json({message: "Item not found."})
         }
         await trx.commit()
-        
-        return response.json({... item, category})
+        const serializedCategory = categories.map( (category) => {
+            return category.category_id
+        })
+        return response.json({... item, category: serializedCategory})
         }
 
     async delete(request: Request, response: Response){
