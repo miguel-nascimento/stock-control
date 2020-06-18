@@ -6,11 +6,13 @@ and with React in the *front-end*
 
 ## Installation guide
 
->> yarn install
-yarn knex:migrate
-yarn knex:seed
+> yarn install
+
+> yarn knex:migrate
+
+> yarn knex:seed
 
 And just use 
->> yarn dev
+> yarn dev
 
 to run the back-end application in the **localhost:3333**
