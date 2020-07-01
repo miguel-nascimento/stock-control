@@ -16,6 +16,7 @@
   "scripts": {
     "dev": "ts-node-dev --ignore-watch node_modules --transpileOnly src/server.ts",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
-    "knex:seed": "knex --knexfile knexfile.ts seed:run"
+    "knex:seed": "knex --knexfile knexfile.ts seed:run",
+    "start": "tsc && node dist/src/server.js"
   }
 }
