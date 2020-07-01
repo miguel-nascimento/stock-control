@@ -13,6 +13,6 @@ yarn knex:seed
 ```
 And just use 
 ```bash
-yarn dev
+yarn start
 ```
 to run the back-end application in the **localhost:3333**
